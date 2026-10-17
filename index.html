@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>David Osoba | Biomedical Engineering Student &amp; Creative Technologist</title>
+<meta name="description" content="David Osoba: biomedical engineering student and creative technologist in Lagos. Backend development, AI/ML, medical equipment maintenance, graphic design and video editing.">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050505;--ink:#f1f5f4;--mute:#8d9f9c;--teal:#2dd4bf;--amber:#f5a524;--ease:cubic-bezier(.32,.72,0,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 "Plus Jakarta Sans","Trebuchet MS",sans-serif;overflow-x:hidden}
+h1,h2,h3{margin:0;line-height:1.02;letter-spacing:-.035em}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.wrap{max-width:74rem;margin:0 auto;padding:0 1rem}
+.eyebrow{display:inline-block;border-radius:2rem;padding:.3rem .8rem;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--mute);margin-bottom:1.5rem}
+/* nav */
+.nav{position:fixed;top:1.25rem;left:50%;transform:translateX(-50%);z-index:30;display:flex;align-items:center;gap:1.5rem;padding:.5rem .6rem .5rem 1.4rem;border-radius:2rem;background:rgba(10,14,15,.6);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);width:max-content;max-width:calc(100% - 2rem)}
+.nav b{font-weight:700;letter-spacing:-.02em}
+.nav .links{display:flex;gap:1.3rem;font-size:.9rem}
+.nav .links a{text-decoration:none;color:var(--mute);transition:color .5s var(--ease)}
+.nav .links a:hover{color:var(--ink)}
+.burger{display:none;width:2.4rem;height:2.4rem;border-radius:50%;border:0;background:rgba(255,255,255,.08);position:relative;cursor:pointer}
+.burger i{position:absolute;left:.85rem;width:.7rem;height:1.5px;background:var(--ink);transition:transform .7s var(--ease)}
+.burger i:nth-child(1){top:1rem}.burger i:nth-child(2){top:1.35rem}
+.open .burger i:nth-child(1){transform:translateY(.175rem) rotate(45deg)}
+.open .burger i:nth-child(2){transform:translateY(-.175rem) rotate(-45deg)}
+.menu{position:fixed;inset:0;z-index:20;background:rgba(5,5,5,.88);backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);display:flex;flex-direction:column;justify-content:center;gap:1rem;padding:2rem;opacity:0;pointer-events:none;transition:opacity .7s var(--ease)}
+.open .menu{opacity:1;pointer-events:auto}
+.menu a{font-size:2.6rem;font-weight:700;letter-spacing:-.04em;text-decoration:none;transform:translateY(3rem);opacity:0;transition:transform .8s var(--ease),opacity .8s var(--ease)}
+.open .menu a{transform:none;opacity:1}
+.open .menu a:nth-child(2){transition-delay:.08s}.open .menu a:nth-child(3){transition-delay:.16s}.open .menu a:nth-child(4){transition-delay:.24s}.open .menu a:nth-child(5){transition-delay:.32s}
+@media(max-width:767px){.nav .links{display:none}.burger{display:block}.nav{gap:2rem}}
+/* hero */
+.hero{min-height:100dvh;display:flex;align-items:center;position:relative;padding:8rem 0 5rem}
+.orb{position:absolute;border-radius:50%;pointer-events:none}
+.o1{width:38rem;height:38rem;right:-10rem;top:6%;background:radial-gradient(circle,rgba(45,212,191,.22),transparent 65%)}
+.o2{width:30rem;height:30rem;left:-12rem;bottom:0;background:radial-gradient(circle,rgba(245,165,36,.14),transparent 65%)}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(3.6rem,13vw,10.5rem);font-weight:800}
+.hero h1 span{color:var(--teal)}
+.hero p{max-width:34rem;font-size:1.2rem;color:var(--mute);margin:1.8rem 0 2.4rem}
+.btn{display:inline-flex;align-items:center;gap:1rem;padding:.5rem .5rem .5rem 1.6rem;border-radius:2rem;background:var(--ink);color:#050505;font-weight:700;text-decoration:none;transition:transform .6s var(--ease)}
+.btn:active{transform:scale(.98)}
+.btn span{width:2.3rem;height:2.3rem;border-radius:50%;background:rgba(0,0,0,.08);display:grid;place-items:center;transition:transform .6s var(--ease)}
+.btn:hover span{transform:translate(.2rem,-.1rem) scale(1.06)}
+.btn svg{width:1rem;height:1rem;stroke:#050505;fill:none;stroke-width:1.2}
+/* sections */
+section{padding:clamp(5rem,12vw,9rem) 0 0}
+h2{font-size:clamp(2.2rem,6vw,4.4rem);font-weight:800;margin-bottom:2.5rem}
+.shell{padding:.4rem;border-radius:2rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);height:100%}
+.core{border-radius:calc(2rem - .4rem);background:#0b0f10;box-shadow:inset 0 1px 1px rgba(255,255,255,.12);padding:1.8rem;height:100%}
+.core h3{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;margin-bottom:.8rem}
+.core p{margin:0 0 .9rem;color:var(--mute)}
+.core small{color:var(--teal);font-size:.88rem;font-weight:500}
+.tag{display:inline-block;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem;font-weight:500}
+.bento{display:grid;gap:1rem;grid-template-columns:repeat(12,1fr)}
+.bento>*{grid-column:span 12}
+@media(min-width:768px){.s7{grid-column:span 7}.s5{grid-column:span 5}.s6{grid-column:span 6}.s4{grid-column:span 4}}
+.shell a.cardlink{display:block;height:100%;text-decoration:none}
+.about{font-size:clamp(1.5rem,3.6vw,2.7rem);line-height:1.22;letter-spacing:-.03em;font-weight:500;max-width:52rem}
+.about em{font-style:normal;color:var(--teal)}
+.exp .row{display:grid;grid-template-columns:10rem 1fr;gap:1rem;padding:1.2rem 0;border-top:1px solid rgba(255,255,255,.08)}
+.exp .row:first-child{border:0;padding-top:0}
+.exp .row:last-child{padding-bottom:0}
+.exp b{font-weight:500}.exp span{color:var(--mute)}.exp span b{color:var(--ink);font-weight:700}
+@media(max-width:600px){.exp .row{grid-template-columns:1fr;gap:.2rem}}
+.contact{padding:clamp(5rem,12vw,9rem) 0 3rem}
+.contact h2{font-size:clamp(2.8rem,10vw,8rem);margin-bottom:2rem}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;color:var(--mute);font-size:.9rem;padding:2rem 0 3rem;margin-top:3rem;border-top:1px solid rgba(255,255,255,.08)}
+.links2{display:flex;gap:1.2rem;margin-top:1.5rem}
+/* reveal */
+.js .rv{opacity:0;transform:translateY(4rem);filter:blur(10px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease)}
+.js .rv.in{opacity:1;transform:none;filter:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}.js .rv{opacity:1;transform:none;filter:none}}
+</style>
+</head>
+<body>
+<div id="shell">
+<nav class="nav" aria-label="Main">
+  <b>David Osoba</b>
+  <div class="links"><a href="#work">Work</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div>
+  <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
+</nav>
+<div class="menu" id="menu"><a href="#work">Work</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div>
+
+<main id="top">
+  <header class="hero">
+    <div class="orb o1"></div><div class="orb o2"></div>
+    <div class="wrap">
+      <div class="eyebrow rv">Portfolio 2026</div>
+      <h1 class="rv">David<br><span>Osoba</span></h1>
+      <p class="rv">Biomedical engineering student and creative technologist. I fix hospital equipment, build backend software, work with AI and design the visuals.</p>
+      <a class="btn rv" href="#work">See the work <span><svg viewBox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a>
+    </div>
+  </header>
+
+  <section id="work"><div class="wrap">
+    <div class="eyebrow rv">Selected work</div>
+    <h2 class="rv">Things I've built and worked on</h2>
+    <div class="bento">
+      <div class="s7 rv"><div class="shell"><a class="cardlink" href="https://github.com/David-Osoba"><div class="core"><span class="tag">Backend and web</span><h3>TeamTrack</h3><p>A university sports team management app. It registers players in bulk from CSV, builds sport-specific training plans and flags players who need attention.</p><small>Next.js, Supabase, Vercel</small></div></a></div></div>
+      <div class="s5 rv"><div class="shell"><div class="core"><span class="tag">Biomedical</span><h3>Device R&amp;D</h3><p>Research, beta testing, quality control and troubleshooting of biomedical devices for local healthcare, at CervI-Tech.</p></div></div></div>
+      <div class="s5 rv"><div class="shell"><div class="core"><span class="tag">CRM and automation</span><h3>CRM Capstone</h3><p>A company-wide workspace across five departments with automations and an executive dashboard, built with a cohort.</p><small>monday.com</small></div></div></div>
+                  <div class="s7 rv"><div class="shell"><a class="cardlink" href="https://github.com/David-Osoba"><div class="core"><span class="tag">AI and software</span><h3>Crypto Wallet Tracker</h3><p>A multi-chain wallet tracker concept that applies full-stack and API-integration skills to a live data problem.</p></div></a></div></div>
+      <div class="rv"><div class="shell"><div class="core"><span class="tag">Prototype</span><h3>WAEC Fleet Tracker</h3><p>A fleet tracking prototype for WAEC's errand cars across its branches. Branch heads see which cars are on duty, available or needing repair, and can follow a car's route to request a stop or delivery.</p></div></div></div>
+    </div>
+  </div></section>
+
+  <section id="about"><div class="wrap">
+    <div class="eyebrow rv">Hello</div>
+    <p class="about rv">I'm David, a 400-level <em>Biomedical Engineering</em> student at the University of Lagos. I've worked on hospital equipment, built backend software for healthcare, designed visuals and spoken on live radio. I want to bring all of it into <em>healthcare technology</em> and AI engineering.</p>
+  </div></section>
+
+  <section id="skills"><div class="wrap">
+    <div class="eyebrow rv">Skills</div>
+    <h2 class="rv">What I bring</h2>
+    <div class="bento">
+      <div class="s4 rv"><div class="shell"><div class="core"><h3>Engineering and tech</h3><p>Biomedical systems, medical equipment maintenance, troubleshooting and QA, and backend development.</p><small>Biomedical Systems, Medical Equipment Maintenance, JavaScript (Backend), Troubleshooting &amp; QA</small></div></div></div>
+      <div class="s4 rv"><div class="shell"><div class="core"><h3>AI and ML</h3><p>Prompt engineering and AI-assisted software development, plus self-directed study of the AI Engineer track.</p><small>Prompt Engineering, AI-assisted software development, roadmap.sh</small></div></div></div>
+      <div class="s4 rv"><div class="shell"><div class="core"><h3>Creative media</h3><p>Graphic design, video editing and content creation, including visual materials and reports for stakeholders.</p><small>Graphic Design, Video Editing, Content Creation</small></div></div></div>
+      <div class="s4 rv"><div class="shell"><div class="core"><h3>CRM</h3><p>Customer resource management and automations design, learned in a 10-week program.</p><small>CRM, monday.com, Airtable, Zapier</small></div></div></div>
+      <div class="s4 rv"><div class="shell"><div class="core"><h3>Communication</h3><p>Public speaking and on-air experience, with detailed project documentation.</p><small>Public Speaking, Project Documentation</small></div></div></div>
+      <div class="s4 rv"><div class="shell"><div class="core"><h3>Collaboration</h3><p>Working across cross-functional teams in engineering, healthcare and business cohorts.</p><small>Cross-functional Collaboration</small></div></div></div>
+    </div>
+  </div></section>
+
+  <section id="experience"><div class="wrap">
+    <div class="eyebrow rv">Experience</div>
+    <h2 class="rv">Where I've worked</h2>
+    <div class="shell rv"><div class="core exp">
+      <div class="row"><b>2025 to present</b><span><b>SIWES Intern, LASUTH Critical Care Unit.</b> Routine maintenance, fault diagnosis and repair of critical care equipment, plus general facility upkeep in a live hospital.</span></div>
+      <div class="row"><b>2025</b><span><b>Backend Developer, CervI-Tech (AfriTech Program).</b> JavaScript backend for biomedical software, integrated with user-facing healthcare interfaces.</span></div>
+      <div class="row"><b>2026</b><span><b>CRM Program, 10 weeks.</b> monday.com, Airtable and Zapier, ending in a five-department group capstone.</span></div>
+      <div class="row"><b>September 2024</b><span><b>Biomedical Engineering Intern, CervI-Tech.</b> Device R&amp;D, beta testing, quality control, technical reports and visual materials for stakeholders.</span></div>
+      <div class="row"><b>2024 and 2025</b><span><b>AfriTech Program Fellow.</b> Selected two years in a row to prototype solutions for African healthcare.</span></div>
+      <div class="row"><b>Certificate</b><span><b>Media Literacy, City 105.1 FM.</b> Broadcasting ethics and mass communication, with guest appearances on live broadcasts.</span></div>
+    </div></div>
+  </div></section>
+
+  <div class="contact" id="contact"><div class="wrap">
+    <div class="eyebrow rv">Contact</div>
+    <h2 class="rv">Got something<br>in mind?</h2>
+    <a class="btn rv" href="mailto:daviosoba21@gmail.com">daviosoba21@gmail.com <span><svg viewBox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a>
+    <div class="links2 rv"><a href="https://github.com/David-Osoba">GitHub</a></div>
+    <footer><span>David Osoba, Lagos, Nigeria</span><a href="#top">Back to top</a></footer>
+  </div></div>
+</main>
+</div>
+<script>
+document.documentElement.classList.add('js');
+var els=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+  els.forEach(function(el){io.observe(el)});
+}else{els.forEach(function(el){el.classList.add('in')})}
+var s=document.getElementById('shell'),b=document.getElementById('burger');
+function tog(o){s.classList.toggle('open',o);b.setAttribute('aria-expanded',o)}
+b.addEventListener('click',function(){tog(!s.classList.contains('open'))});
+document.querySelectorAll('#menu a').forEach(function(a){a.addEventListener('click',function(){tog(false)})});
+</script>
+</body>
+</html>
